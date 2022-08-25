@@ -33,6 +33,7 @@ class Query(graphene.ObjectType):
 
     def resolve_category_by_name(self, root, name):
         try:
+            print(name)
             return Category.objects.get(name=name)
         except Category.DoesNotExist:
             return None
